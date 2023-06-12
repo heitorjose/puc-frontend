@@ -6,6 +6,16 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './login/login.component';
 import { ProdutoComponent } from './produto/produto.component';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatCardModule} from '@angular/material/card';
+import {MatInputModule} from '@angular/material/input';
+import {MatButtonModule} from '@angular/material/button';
+import {MatTableModule} from '@angular/material/table';
+import {MatIconModule} from '@angular/material/icon';
+import {MatDividerModule} from '@angular/material/divider';
+import { LoginService } from './login/service/login.service';
+import { ProdutoService } from './produto/service/produto.service';
+import { InterceptorModule } from './interceptors/interceptor.module';
 
 @NgModule({
   declarations: [
@@ -16,9 +26,17 @@ import { ProdutoComponent } from './produto/produto.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatSidenavModule,
+    MatCardModule,
+    MatInputModule,
+    MatButtonModule,
+    MatTableModule,
+    MatIconModule,
+    MatDividerModule,
+    InterceptorModule
   ],
-  providers: [],
+  providers: [LoginService, ProdutoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
