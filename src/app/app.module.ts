@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -16,12 +16,15 @@ import {MatDividerModule} from '@angular/material/divider';
 import { LoginService } from './login/service/login.service';
 import { ProdutoService } from './produto/service/produto.service';
 import { InterceptorModule } from './interceptors/interceptor.module';
+import {MatDialog, MatDialogModule} from '@angular/material/dialog';
+import { ProdutoDialogComponent } from './dialog/produto.dialog/produto.dialog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    ProdutoComponent
+    ProdutoComponent,
+    ProdutoDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +37,9 @@ import { InterceptorModule } from './interceptors/interceptor.module';
     MatTableModule,
     MatIconModule,
     MatDividerModule,
-    InterceptorModule
+    InterceptorModule,
+    HttpClientModule,
+    MatDialogModule
   ],
   providers: [LoginService, ProdutoService],
   bootstrap: [AppComponent]

@@ -13,13 +13,9 @@ export class LoginComponent {
   }
 
   onSubmit(): void {
-    if (this.form.valid) {
-      let value = this.form.value;
-      this.service.login(value).subscribe(value=>{
-        localStorage.setItem('token',value.token!)
-      })
+
       
     }
-  }
+  
  
 }
